@@ -1,0 +1,19 @@
+<div class="recipe-div">
+    <div class="recipe-results">
+        <img src="{{ recipe.recipe.image }}">
+        <p class="recipeTitle">{{ recipe.recipe.label }}</p>
+        <p>Calories: {{ recipe.recipe.calories.toFixed(0) }}</p>
+        <p>Total Time: {{ recipe.recipe.totalTime }}</p>
+        <p>Serves: {{ recipe.recipe.yield }}</p>
+        <p>Ingredients:</p>
+        <ul *ngFor="let ingredient of recipe.recipe.ingredientLines">
+            <li>
+                {{ ingredient }}
+            </li>
+            <!-- console.log({{recipe.recipe.ingredients}); -->
+        </ul>
+        <p>Tags: {{ recipe.recipe.healthLabels }}</p>
+        <p>Source: {{ recipe.recipe.source }}</p>
+        <a href="{{ recipe.recipe.url }}" target="_blank">View Full Recipe</a>
+    </div>
+</div>
