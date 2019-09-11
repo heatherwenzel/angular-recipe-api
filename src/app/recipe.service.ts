@@ -18,7 +18,7 @@ export class RecipeService {
 
   constructor(private http: HttpClient) {}
 
-  // method takes search parameteres and adds it into the api url to filter results based on user input in fields
+  // method takes search parameters and adds it into the api url to filter results based on user input in fields
   // and then returns the api's response and stores all in the results array
   getRecipeData(userSearch: string, dietSearch: string, calorieSearch: string) {
     return this.http.get(`https://api.edamam.com/search?q=${userSearch}&app_id=${this.apiid}&app_key=${this.apikey}&from=0&to=9&calories=${calorieSearch}&health=${dietSearch}`).toPromise().then(response => {
